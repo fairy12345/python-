@@ -1,4 +1,4 @@
-from operator import attrgetter
+（1）：from operator import attrgetter
 
 class Student:
 	def __init__(self,name,grade,age):
@@ -20,24 +20,13 @@ Student("Ð¡Â·","g",30),\
 result = sorted(s,key=attrgetter('age'))
 print(result)
 
-class Student:
+（2）：class Student:
 	def __init__(self,name,grade,age):
 		self.name=name
 		self.grade=grade
 		self.age=age
 	def __repr__(self):
 		return((self.name,self.grade,self.age))
-
-    
-
-
-
-
-
-
-
-
-
 
 s=[("胡歌","a",18),\
 ("彭于晏","b",19),\
@@ -60,3 +49,25 @@ def sort_by_name(student):
 result = sorted(s,key=sort_by_age)
 print(s)
 
+（3）：import os
+root_path = os.getcwd()
+#getcwd 获取当前目录
+#print(root_path)
+for root,dirs,files in os.walk(root_path):（如何遍历一个文件夹）
+    print("Root:",root)
+    print("Dir:",dirs)
+    print("Files:",files)
+（4）：import os
+root_path = os.getcwd()
+#getcwd 获取当前目录
+offset = len(root_path.split("\\"))
+#print(offset)(长度)
+
+for root,dirs,files in os.walk(root_path):
+	current_dir=root.split("\\")
+	indent_level = len(current_dir)-offset
+	print("\t"*indent_level,current_dir[-1])
+    #print("Root:",root)
+    #print("Dir:",dirs)
+    #print("Files:",files)
+    #print("Root:",root)
