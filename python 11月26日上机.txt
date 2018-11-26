@@ -1,0 +1,22 @@
+from operator import attrgetter
+
+class Student:
+	def __init__(self,name,grade,age):
+		self.name=name
+		self.grade=grade
+		self.age=age
+	def __repr__(self):
+		return repr((self.name,self.grade,self.age))
+
+
+s=[Student("ºú¸è","a",18),\
+Student("ÅíÓÚêÌ","b",19),\
+Student("scum","d",20),\
+Student("ÑîÃİ","c",30),\
+Student("Ğ¡ºì","e",20),\
+Student("Ğ¡Â·","g",30),\
+]
+
+result = sorted(s,key=attrgetter('age'))
+print(result)
+
