@@ -9,14 +9,54 @@ class Student:
 		return repr((self.name,self.grade,self.age))
 
 
-s=[Student("����","a",18),\
-Student("������","b",19),\
+s=[Student("ºú¸è","a",18),\
+Student("ÅíÓÚêÌ","b",19),\
 Student("scum","d",20),\
-Student("����","c",30),\
-Student("С��","e",20),\
-Student("С·","g",30),\
+Student("ÑîÃÝ","c",30),\
+Student("Ð¡ºì","e",20),\
+Student("Ð¡Â·","g",30),\
 ]
 
 result = sorted(s,key=attrgetter('age'))
 print(result)
+
+class Student:
+	def __init__(self,name,grade,age):
+		self.name=name
+		self.grade=grade
+		self.age=age
+	def __repr__(self):
+		return((self.name,self.grade,self.age))
+
+    
+
+
+
+
+
+
+
+
+
+
+s=[("胡歌","a",18),\
+("彭于晏","b",19),\
+("fairy","c",20),\
+("scum","d",20),\
+("杨幂","c",30),\
+("小红","e",20),\
+("小路","g",30),\
+]
+def sort_by_age(student):
+	return(student[2])
+
+def sort_by_grade(student):
+	return(student[1])
+
+
+def sort_by_name(student):
+	return(student[0])
+
+result = sorted(s,key=sort_by_age)
+print(s)
 
